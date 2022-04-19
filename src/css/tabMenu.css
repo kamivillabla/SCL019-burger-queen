@@ -1,16 +1,5 @@
-::root {
-    --colorYellow: #FFE66F;
-    --colorblack: rgb(19, 21, 23, 0.8);
-}
-
-.container-menu {
-    background-color: rgba(19, 21, 23, 0.9);
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    min-height: 100vh;
-}
-
-.buttonComponente {
+  
+  .tabs-productos {
     font-size: 2.5rem;
     margin: auto;
     background-color: whitesmoke;
@@ -27,11 +16,15 @@
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
     transition: 0.2s all;
-}
-
-.buttonComponente:active {
+  }
+  
+  .active-tabs-productos  {
     background-color: var(--colorYellow);
-    transform: scale(0.98);
-    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
-}
+  }
+  .content {
+    display: none;
+  }
+ 
+  .active-content {
+    display: block;
+  }

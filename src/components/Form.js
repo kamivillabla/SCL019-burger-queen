@@ -10,13 +10,13 @@ const Form = () => {
             <input type="text" className="form-control form-nombre-cliente" id="text" placeholder="Nombre cliente" />
         </div>
         <div class="col-md-4">
-            <select className="form-control form-num-mesa" id="number">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
+            <select className="form-control form-num-mesa" name='mesa' id="number">
+                <option disabled selected>N° Mesa</option>
+                <option value="mesa-1">1</option>
+                <option value="mesa-2">2</option>
+                <option value="mesa-3">3</option>
+                <option value="mesa-4">4</option>
+                <option value="mesa-5">5</option>
             </select>
         </div>
      </div>
