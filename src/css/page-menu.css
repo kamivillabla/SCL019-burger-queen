@@ -1,0 +1,22 @@
+::root {
+    --colorYellow: #FFE66F;
+    --colorblack: #rgba(19, 21, 23, 8.8);
+  }
+.buttonComponente {
+    font-size: 2.5rem;
+    background-color: transparent;
+    border: 1px solid var(--colorYellow);
+    width: 15rem;
+    height: 6rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px ;
+    -webkit-border-radius: 15px ;
+    -moz-border-radius: 15px ;
+    -ms-border-radius: 15px ;
+    -o-border-radius: 15px ;
+}
+.buttonComponente:active {
+    background-color: var(--colorYellow);
+}

@@ -1,20 +1,29 @@
 import React from 'react'
 import '../css/productos.css'
+import '../App.css'
 
 function productos(props) {
   return (
-    <div className='productos-container'>
-        <img className='producto-imagen' src={require(`../img/pizzaProductos.png`)} alt="" />
-        <div className='productos-nombreDescrip-container'>
-            <h4>Pizza vegetariana</h4>
-            <p>Lorem, ipsum, dolor, sit, amet.</p>
+    <div className="row mt-5 productos-container p-4">
+      <div className="col-12">
+        <div className="row">
+          <div className="col-3">
+            <img className='producto-imagen img-fluid' src={require(`../img/pizza-productos.png`)} alt="Imagen de producto Pizza" />
+          </div>
+          <div className="col-6">
+            <h3>{props.nombre}</h3>
+            <p>{props.ingredientes}.</p>
+          </div>
+          <div className="col-3">
+            <p className='fw-bold'>{props.precio}</p>
+          </div>
         </div>
-        <div className='producto-precioAgregar-container'>
-            <p className='producto-precio'>$7.990</p>
-            <button className='producto-agregar-button'>Agregar</button>    
-        </div>
+      </div>
     </div>
+
   )
 }
 
 export default productos
+
+

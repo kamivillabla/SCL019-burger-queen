@@ -1,0 +1,24 @@
+.form-control {
+    font-size: 1.8rem;
+    height: 4rem;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.form-control:active {
+    outline: none;
+}
+.form-control:focus {
+   border: 1px solid var(--colorYellow);
+   box-shadow: none;
+}
+
+.form-nombre-cliente {
+width: 22rem;
+}
+
+.form-num-mesa {
+   width: 8rem;
+}

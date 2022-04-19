@@ -3,20 +3,50 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --colorYellow: #FFE66F;
+  --colorblack: #rgba(19, 21, 23, 8.8);
+}
+
+/* Reiniciar estilos botones */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+   -webkit-appearance: button; /* for input */
+     -moz-user-select: none;
+      -ms-user-select: none;
+}
 
 html, body {
   font-size: 10px;
+  font-family: 'Antonio', sans-serif;
 }
 h1 {
   font-size: 3rem;
   font-weight: 800;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
 }
 h4 {
   font-size: 1.9rem;
   font-weight: 700;
 }
 p {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 /* .menu-contenedor {
   background-color: #131517;

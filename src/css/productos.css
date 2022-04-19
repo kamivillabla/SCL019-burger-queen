@@ -1,7 +1,9 @@
 .productos-container {
-    min-height: 20rem;
-}
-.producto-imagen {
-    width: 2rem;
-    height: 2rem;
+    min-height: auto;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
