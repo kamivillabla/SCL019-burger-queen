@@ -1,0 +1,7 @@
+.productos-container {
+    min-height: 20rem;
+}
+.producto-imagen {
+    width: 2rem;
+    height: 2rem;
+}

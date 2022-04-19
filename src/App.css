@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 10px;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+h4 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+p {
+  font-size: 1.8rem;
+}
+/* .menu-contenedor {
+  background-color: #131517;
+  min-height: 1000px;
+} */
+
+/* @media (min-width: 768px) {
+
+} */
