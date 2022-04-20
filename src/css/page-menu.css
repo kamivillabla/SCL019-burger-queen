@@ -1,10 +1,9 @@
-::root {
-    --colorYellow: #FFE66F;
-    --colorblack: rgba(19, 21, 23, 0.8);
-}
 
-.container-menu {
+.container-menu--color {
     background-color: rgba(19, 21, 23, 0.9);
+  /*   background-color: whitesmoke; */
+}
+.container-menu {
     padding-top: 10rem;
     padding-bottom: 10rem;
     min-height: 100vh;

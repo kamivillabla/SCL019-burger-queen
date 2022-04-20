@@ -1,6 +1,8 @@
 .productos-container {
     min-height: auto;
     background-color: whitesmoke;
+    /*  background-color: rgba(19, 21, 23, 0.9); */
+    /*     color: white; */
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
