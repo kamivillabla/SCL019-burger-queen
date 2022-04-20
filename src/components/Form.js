@@ -1,28 +1,37 @@
-import React from 'react'
-import '../css/form.css'
+import React from "react";
+import "../css/form.css";
 
 const Form = () => {
   return (
     <>
-   <form>
-    <div class="row mt-4">
-        <div class="col-md-8">
-            <input type="text" className="form-control form-nombre-cliente" id="text" placeholder="Nombre cliente" />
-        </div>
-        <div class="col-md-4">
-            <select className="form-control form-num-mesa" name='mesa' id="number">
-                <option disabled selected>N° Mesa</option>
-                <option value="mesa-1">1</option>
-                <option value="mesa-2">2</option>
-                <option value="mesa-3">3</option>
-                <option value="mesa-4">4</option>
-                <option value="mesa-5">5</option>
+      <form>
+        <div className="row mt-4">
+          <div className="col-md-8">
+            <input
+              type="text"
+              className="form-control form-nombre-cliente"
+              id="text"
+              placeholder="Nombre cliente"
+            />
+          </div>
+          <div className="col-md-4">
+            <select
+              className="form-control form-num-mesa"
+              name="mesa"
+              id="number"
+            >
+              <option disabled>N° Mesa</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
             </select>
+          </div>
         </div>
-     </div>
-    </form>
+      </form>
     </>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

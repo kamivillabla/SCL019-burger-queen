@@ -57,9 +57,21 @@ const Tabmenu = () => {
           ingredientes="Aceituna, piña, acelga"
           precio="$7.990"
         />
+        <Productos
+          imagen="vegetariana"
+          nombre="Vegetariana"
+          ingredientes="Aceituna, piña, acelga"
+          precio="$7.990"
+        />
       </div>
 
       <div className={tabState === 2 ? "content  active-content" : "content"}>
+        <Productos
+          imagen="vegetariana"
+          nombre="Mojito"
+          ingredientes="de Frutilla"
+          precio="$4000"
+        />
         <Productos
           imagen="vegetariana"
           nombre="Mojito"

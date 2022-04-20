@@ -1,28 +1,29 @@
-import React from 'react'
-import '../App.css';
-import '../css/page-menu.css'
-import Tabmenu from '../components/Tabmenu';
-import NavBar from '../components/Nav';
+import React from "react";
+import "../App.css";
+import "../css/page-menu.css";
+import Tabmenu from "../components/Tabmenu";
+import Resumen from "../components/Resumen";
+import NavBar from "../components/Nav";
 
 const Menu = () => {
   return (
-    <div className='container-color'>
+    <div className="container-color">
       <NavBar />
-      <div className='container-menu'>
-        <div className='container-fluid d-flex flex-column justify-content-center '>
-          <div className="container row">
-            {/* Menú */}
-            <div className="col-12 col-md-6">
-              <Tabmenu />
-            </div>
-            {/* Pedido total */}
-            <div className="col-12 col-md-6">
-            </div>
+      <div className="container-fluid container-menu d-flex flex-column align-items-center">
+        <div className="container row">
+          {/* Menú */}
+          <div className="col-12 col-md-6 container-tabmenu">
+            <Tabmenu />F
+          </div>
+          {/* Pedido total */}
+          <div className="col-12 col-md-6 d-flex flex-column container-resumen">
+            <h2 className="text-center resumen-text">Resumen</h2>
+            <Resumen />
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
