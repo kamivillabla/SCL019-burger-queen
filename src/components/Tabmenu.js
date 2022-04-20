@@ -1,80 +1,86 @@
-import React, { useState } from 'react'
-import '../css/tabMenu.css'
-import '../App.css'
-import Productos from './Productos'
-import Form from './Form';
+import React, { useState } from "react";
+import "../css/tabMenu.css";
+import "../App.css";
+import Productos from "./Productos";
+import Form from "./Form";
 
 const Tabmenu = () => {
-    const [toggleState, setToggleState] = useState(1);
+  // Estado actual y la función que la actualiza
+  const [tabState, settabState] = useState(1);
 
-    const toggleTab = (index) => {
-        setToggleState(index);
-    };
-    return (
-        <>
-            <div className="d-flex justify-content-center">
-                <button
-                    className={toggleState === 1 ? 'tabs-productos active-tabs-productos' : 'tabs-productos'}
-                    onClick={() => toggleTab(1)}>
-                    Pizzas
-                </button>
-                <button
-                    className={toggleState === 2 ? 'tabs-productos active-tabs-productos' : 'tabs-productos'}
-                    onClick={() => toggleTab(2)}
-                >Tragos
-                </button>
-            </div>
-            <Form />
+  const tabValue = (index) => {
+    settabState(index);
+  };
+  return (
+    <>
+      <div className="d-flex justify-content-center">
+        <button
+          className={
+            tabState === 1
+              ? "tabs-productos active-tabs-productos"
+              : "tabs-productos"
+          }
+          onClick={() => tabValue(1)}
+        >
+          Pizzas
+        </button>
+        <button
+          className={
+            tabState === 2
+              ? "tabs-productos active-tabs-productos"
+              : "tabs-productos"
+          }
+          onClick={() => tabValue(2)}
+        >
+          Tragos
+        </button>
+      </div>
+      <Form />
 
-            <div className="content-tabs">
-                <div
-                    className={toggleState === 1 ? 'content  active-content' : 'content'}
-                >
-                    <Productos
-                        imagen='productos'
-                        nombre='Vegetariana'
-                        ingredientes='Aceituna, piña, acelga'
-                        precio='$7.990'
-                    />
-                    <Productos
-                        imagen='productos'
-                        nombre='Vegana meat not meat'
-                        ingredientes='Carne Vegan, lorem, lorem '
-                        precio='$7.990'
-                    />
-                    <Productos
-                        imagen='productos'
-                        nombre='Vegetariana'
-                        ingredientes='Aceituna, piña, acelga'
-                        precio='$7.990'
-                    />
-                </div>
+      <div className={tabState === 1 ? "content  active-content" : "content"}>
+        {/* Convertir a archivo .json para mostrarlo */}
+        <Productos
+          imagen="vegetariana"
+          nombre="Vegetariana"
+          ingredientes="Aceituna, piña, acelga"
+          precio="$7.990"
+        />
+        <Productos
+          imagen="vegetariana"
+          nombre="Vegana"
+          ingredientes="Vegan, lorem, lorem "
+          precio="$7.990"
+        />
+        <Productos
+          imagen="vegetariana"
+          nombre="Vegetariana"
+          ingredientes="Aceituna, piña, acelga"
+          precio="$7.990"
+        />
+      </div>
 
-                <div
-                    className={toggleState === 2 ? 'content  active-content' : 'content'}
-                >
-                    <Productos
-                        imagen='productos'
-                        nombre='Mojito'
-                        ingredientes='de Frutilla'
-                        precio='$4000'
-                    />
-                    <Productos
-                        imagen='productos'
-                        nombre='Mojito'
-                        ingredientes='de Frutilla'
-                        precio='$4000'
-                    />
-                    <Productos
-                        imagen='productos'
-                        nombre='Mojito'
-                        ingredientes='de Frutilla'
-                        precio='$4000'
-                    />
-                </div>
-            </div>
-        </>
-    );
-}
+      <div className={tabState === 2 ? "content  active-content" : "content"}>
+        <Productos
+          imagen="vegetariana"
+          nombre="Mojito"
+          ingredientes="de Frutilla"
+          precio="$4000"
+        />
+        <Productos
+          imagen="vegetariana"
+          nombre="Mojito"
+          ingredientes="de Frutilla"
+          precio="$4000"
+        />
+        <Productos
+          imagen="vegetariana"
+          nombre="Mojito"
+          ingredientes="de Frutilla"
+          precio="$4000"
+        />
+      </div>
+    </>
+  );
+};
 
-export default Tabmenu
+export default Tabmenu;

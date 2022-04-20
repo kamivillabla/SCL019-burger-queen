@@ -21,10 +21,7 @@ button {
   line-height: normal;
   overflow: visible;
   padding: 0;
-  -webkit-user-select: none; /* for button */
-   -webkit-appearance: button; /* for input */
-     -moz-user-select: none;
-      -ms-user-select: none;
+
 }
 
 html, body {
@@ -56,6 +53,7 @@ a {
 }
 
 .container-color {
-  background-color: rgba(19, 21, 23, 0.9);
-/*   background-color: whitesmoke; */
+  background-color: rgba(32, 35, 39, 0.9);
+  /* background-color: rgba(50, 51, 53, 0.9); */
+ /*   background-color: whitesmoke;  */
 }
