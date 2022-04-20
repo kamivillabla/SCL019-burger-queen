@@ -21,7 +21,7 @@ const Tabmenu = () => {
                 <button
                     className={toggleState === 2 ? 'tabs-productos active-tabs-productos' : 'tabs-productos'}
                     onClick={() => toggleTab(2)}
-                >Bebidas
+                >Tragos
                 </button>
             </div>
             <Form />

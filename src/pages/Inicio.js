@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const inicio = () => {
     return (
-        <div className='container-fluid vh-100 container-inicio d-flex flex-column justify-content-evenly'>
+        <div className='container-fluid vh-100 container-color d-flex flex-column justify-content-evenly'>
             <div className='d-flex justify-content-center'>
                 <img className='img-logo' src={require('../img/pizza-otrologo.png')} alt="Imagen pizza Logo" />
             </div>

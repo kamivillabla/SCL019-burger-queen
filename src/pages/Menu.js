@@ -6,7 +6,7 @@ import NavBar from '../components/Nav';
 
 const Menu = () => {
   return (
-    <div className='container-menu--color'>
+    <div className='container-color'>
       <NavBar />
       <div className='container-menu'>
         <div className='container-fluid d-flex flex-column justify-content-center '>

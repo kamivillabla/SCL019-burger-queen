@@ -14,8 +14,6 @@ import Error404 from './pages/Error404'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
- {/*    <Menu /> */}
-  {/*   <Inicio /> */}
     <Routes>
       <Route path="/" element={<Inicio />} />
       <Route path="Menu" element={<Menu />} />
