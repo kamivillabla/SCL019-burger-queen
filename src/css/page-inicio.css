@@ -1,0 +1,41 @@
+.container-inicio {
+    background-color: rgba(19, 21, 23, 0.8);
+}
+
+.img-logo {
+    width: 32rem;
+    border-radius: 50%;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+}
+
+
+.button-inicio {
+    font-size: 2.5rem;
+    margin: auto;
+    background-color: var(--colorYellow);
+    width: 20rem;
+    height: 10rem;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+    transition: 0.2s all;
+  }
+  .button-inicio:focus{
+    background-color: whitesmoke;
+    border: 3px solid var(--colorYellow);;
+    transform: scale(0.98);
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+  }

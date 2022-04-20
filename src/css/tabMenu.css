@@ -1,5 +1,4 @@
-  
-  .tabs-productos {
+   .tabs-productos {
     font-size: 2.5rem;
     margin: auto;
     background-color: whitesmoke;
@@ -16,6 +15,12 @@
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
     box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
     transition: 0.2s all;
+  }
+  .tabs-productos:active{
+    background-color: var(--colorYellow);
+    transform: scale(0.98);
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
   }
   
   .active-tabs-productos  {

@@ -1,7 +1,6 @@
 import React from 'react'
 import '../App.css';
 import '../css/page-menu.css'
-import Form from '../components/Form';
 import Tabmenu from '../components/Tabmenu';
 
 const Menu = () => {
