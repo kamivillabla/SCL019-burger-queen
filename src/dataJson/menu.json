@@ -1,0 +1,63 @@
+{
+  "pizzas": [
+    {
+      "id": "p1",
+      "name": "Vegetariana",
+      "price": 9.999,
+      "description": "Queso mozzarella, cebolla, pimiento verde, tomate, champiñon.",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-vegetariana.png"
+    },
+    {
+      "id": "p2",
+      "name": "Vegan queso",
+      "price": 7.999,
+      "description": "Queso vegano, tomate, albahaca",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-veganqueso.png"
+    },
+    {
+      "id": "p3",
+      "name": "Vegan choclo",
+      "price": 8999,
+      "description": "Queso vegano, tomate, champiñon, choclo",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-veganchoclo.png"
+    },
+    {
+      "id": "p4",
+      "name": "Vegan brocoli",
+      "price": 8999,
+      "description": "Queso vegano, tomate, brocoli, aceitunas",
+      "image": ""
+    }
+  ],
+
+  "tragos": [
+    {
+      "id": "t1",
+      "name": "Kross Stout",
+      "price": 2999,
+      "description": "Cerveza negra, Shop de 500cc",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-kross.png"
+    },
+    {
+      "id": "t2",
+      "name": "Mojito de frutilla",
+      "price": 3999,
+      "description": "Vodka, frutilla, Vaso de 500cc",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-mojitofrutilla.png"
+    },
+    {
+      "id": "t3",
+      "name": "Cuba libre",
+      "price": 4000,
+      "description": "Ron blanco, Vaso Tumbler",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-cubalibre.png"
+    },
+    {
+      "id": "t4",
+      "name": "Jugo a elección",
+      "price": 2.999,
+      "description": "Mango, Naranja, frutilla y menta",
+      "image": "https://github.com/kamivillabla/SCL019-burger-queen/blob/develop/src/img/menu/img-jugo.png"
+    }
+  ]
+}

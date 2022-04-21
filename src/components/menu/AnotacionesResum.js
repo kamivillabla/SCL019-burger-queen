@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/anotacionesResum.css";
-import "../App.css";
+import "../../css/anotacionesResum.css";
+import "../../App.css";
 
 const AnotacionesResum = () => {
   return (

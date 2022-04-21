@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
 import "../css/page-menu.css";
-import Tabmenu from "../components/Tabmenu";
-import Resumen from "../components/Resumen";
+import Tabmenu from "../components/menu/Tabmenu";
+import Resumen from "../components/menu/Resumen";
 import NavBar from "../components/Nav";
 
 const Menu = () => {
@@ -13,7 +13,7 @@ const Menu = () => {
         <div className="container row">
           {/* Menú */}
           <div className="col-12 col-md-6 container-tabmenu">
-            <Tabmenu />F
+            <Tabmenu />
           </div>
           {/* Pedido total */}
           <div className="col-12 col-md-6 d-flex flex-column container-resumen">

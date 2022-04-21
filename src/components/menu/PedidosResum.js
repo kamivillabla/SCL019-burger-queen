@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/resumen.css";
-import "../App.css";
+import "../../css/resumen.css";
+import "../../App.css";
 
 const PedidosResum = () => {
   return (

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "../css/tabMenu.css";
-import "../App.css";
-import Productos from "./Productos";
+import "../../css/tabMenu.css";
+import "../../App.css";
+import Productospizza from "./ProductoPizza";
+import ProductosTragos from "./ProductoTragos";
 import Form from "./Form";
 
 const Tabmenu = () => {
@@ -35,29 +36,12 @@ const Tabmenu = () => {
           Tragos
         </button>
       </div>
+      {/* Componente form */}
       <Form />
 
       <div className={tabState === 1 ? "content  active-content" : "content"}>
         {/* Convertir a archivo .json para mostrarlo */}
-        <Productos
-          imagen="vegetariana"
-          nombre="Vegetariana"
-          ingredientes="Aceituna, piña, acelga"
-          precio="$7.990"
-        />
-        <Productos
-          imagen="vegetariana"
-          nombre="Vegana"
-          ingredientes="Vegan, lorem, lorem "
-          precio="$7.990"
-        />
-        <Productos
-          imagen="vegetariana"
-          nombre="Vegetariana"
-          ingredientes="Aceituna, piña, acelga"
-          precio="$7.990"
-        />
-        <Productos
+        <Productospizza
           imagen="vegetariana"
           nombre="Vegetariana"
           ingredientes="Aceituna, piña, acelga"
@@ -66,25 +50,7 @@ const Tabmenu = () => {
       </div>
 
       <div className={tabState === 2 ? "content  active-content" : "content"}>
-        <Productos
-          imagen="vegetariana"
-          nombre="Mojito"
-          ingredientes="de Frutilla"
-          precio="$4000"
-        />
-        <Productos
-          imagen="vegetariana"
-          nombre="Mojito"
-          ingredientes="de Frutilla"
-          precio="$4000"
-        />
-        <Productos
-          imagen="vegetariana"
-          nombre="Mojito"
-          ingredientes="de Frutilla"
-          precio="$4000"
-        />
-        <Productos
+        <ProductosTragos
           imagen="vegetariana"
           nombre="Mojito"
           ingredientes="de Frutilla"

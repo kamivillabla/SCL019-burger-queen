@@ -1,8 +1,8 @@
 import React from "react";
 import AnotacionesResum from "./AnotacionesResum";
 import PedidosResum from "./PedidosResum";
-import "../App.css";
-import "../css/resumen.css";
+import "../../App.css";
+import "../../css/resumen.css";
 
 const Resumen = () => {
   return (
