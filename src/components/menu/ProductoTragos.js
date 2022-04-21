@@ -21,7 +21,6 @@ function ProductosTragos() {
                     src={tragos.image}
                     alt={`Imagen ${tragos.name}`}
                   />{" "}
-                  *
                 </div>
                 <div className="col-7">
                   <h3>{tragos.name}</h3>

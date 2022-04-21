@@ -7,6 +7,8 @@ import "../../App.css";
 function Productospizza() {
   const { producto } = useContext(Context);
   const menuPizza = producto.menu.pizzas;
+  const image = producto.menu.tragos[2].image;
+  console.log(image);
 
   return (
     <>
@@ -18,10 +20,10 @@ function Productospizza() {
                 <div className="col-3">
                   <img
                     className="img-fluid"
+                    key={pizza.id}
                     src={pizza.image}
                     alt={`Imagen ${pizza.name}`}
                   />
-                  *
                 </div>
                 <div className="col-7">
                   <h3>{pizza.name}</h3>
