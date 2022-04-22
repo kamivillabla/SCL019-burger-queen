@@ -9,6 +9,7 @@
 }
 
 /* Reiniciar estilos botones */
+input,
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
@@ -21,6 +22,7 @@ button {
   line-height: normal;
   overflow: visible;
   padding: 0;
+  outline: none;
 }
 
 html,

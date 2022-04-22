@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../../context/UseContext";
 import "../../css/form.css";
 
 const Form = () => {
+  const { name, setName } = useContext(Context);
   return (
     <>
       <form>
@@ -12,6 +15,8 @@ const Form = () => {
               className="form-control form-nombre-cliente"
               id="text"
               placeholder="Nombre cliente"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="col-md-4">

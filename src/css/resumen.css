@@ -10,11 +10,17 @@
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
 }
+.form-resumen {
+  padding-left: 1rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
 
-/* .resumen-cliente h3,
-.resumen-mesa h3 {
-  color: #f1ca0d;
-} */
 .resumen-cliente p,
 .resumen-mesa p {
   font-size: 2rem;

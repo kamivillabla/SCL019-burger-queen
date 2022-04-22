@@ -1,16 +1,27 @@
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../../context/UseContext";
 import AnotacionesResum from "./AnotacionesResum";
 import PedidosResum from "./PedidosResum";
 import "../../App.css";
 import "../../css/resumen.css";
 
 const Resumen = () => {
+  const { name, setName } = useContext(Context);
+
   return (
     <>
       <div className="container resumen-container mt-5">
         <div className="d-flex resumen-cliente mt-4">
           <h3>Cliente:</h3>
-          <p>karla</p>
+          <input
+            className="form-resumen"
+            type="text"
+            placeholder="Nombre cliente"
+            readOnly
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="d-flex resumen-mesa">
           <h3>Mesa:</h3>
