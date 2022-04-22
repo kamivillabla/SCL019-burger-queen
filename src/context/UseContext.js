@@ -13,10 +13,13 @@ export const DatosContext = ({ children }) => {
     menu: listMenu,
   });
   const [name, setName] = useState("");
+  const [mesa, setMesa] = useState("");
 
   return (
     <>
-      <Context.Provider value={{ producto, setProductos, name, setName }}>
+      <Context.Provider
+        value={{ producto, setProductos, name, setName, mesa, setMesa }}
+      >
         {children}
       </Context.Provider>
     </>

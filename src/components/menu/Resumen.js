@@ -7,7 +7,7 @@ import "../../App.css";
 import "../../css/resumen.css";
 
 const Resumen = () => {
-  const { name, setName } = useContext(Context);
+  const { name, mesa } = useContext(Context);
 
   return (
     <>
@@ -20,12 +20,11 @@ const Resumen = () => {
             placeholder="Nombre cliente"
             readOnly
             value={name}
-            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="d-flex resumen-mesa">
           <h3>Mesa:</h3>
-          <p>6</p>
+          <input className="form-resumen" type="text" value={mesa} />
         </div>
         <hr className="resumen-border" />
         {/* Iterable */}

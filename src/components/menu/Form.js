@@ -4,7 +4,7 @@ import { Context } from "../../context/UseContext";
 import "../../css/form.css";
 
 const Form = () => {
-  const { name, setName } = useContext(Context);
+  const { name, setName, mesa, setMesa } = useContext(Context);
   return (
     <>
       <form>
@@ -15,7 +15,7 @@ const Form = () => {
               className="form-control form-nombre-cliente"
               id="text"
               placeholder="Nombre cliente"
-              value={name}
+              value={name.slice(0, 20)}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -24,6 +24,8 @@ const Form = () => {
               className="form-control form-num-mesa"
               name="mesa"
               id="number"
+              value={mesa}
+              onChange={(e) => setMesa(e.target.value)}
             >
               <option disabled>N° Mesa</option>
               <option>1</option>
