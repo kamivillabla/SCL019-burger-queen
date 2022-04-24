@@ -58,7 +58,7 @@ a {
   color: black;
 }
 
-.container-color {
+.container--color {
   background-color: rgba(32, 35, 39, 0.9);
   /* background-color: rgba(50, 51, 53, 0.9); */
   /*   background-color: whitesmoke;  */

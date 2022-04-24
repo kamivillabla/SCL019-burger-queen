@@ -7,21 +7,21 @@ import NavBar from "../components/Nav";
 
 const Menu = () => {
   return (
-    <div className="container-color">
+    <div className="container--color">
       <NavBar />
-      <div className="container-fluid container-menu d-flex flex-column align-items-center">
-        <div className="container row">
+      <main className="container-fluid container-menu d-flex flex-column align-items-center">
+        <section className="container row">
           {/* Menú */}
-          <div className="col-12 col-md-6 container-tabmenu">
+          <article className="col-12 col-md-6 container-tabmenu">
             <Tabmenu />
-          </div>
+          </article>
           {/* Pedido total */}
-          <div className="col-12 col-md-6 d-flex flex-column container-resumen">
+          <article className="col-12 col-md-6 d-flex flex-column container-resumen">
             <h2 className="text-center resumen-text">Resumen</h2>
             <Resumen />
-          </div>
-        </div>
-      </div>
+          </article>
+        </section>
+      </main>
     </div>
   );
 };

@@ -18,19 +18,18 @@ const Resumen = () => {
             className="form-resumen"
             type="text"
             placeholder="Nombre cliente"
-            readOnly
             value={name}
+            readOnly
           />
         </div>
         <div className="d-flex resumen-mesa">
           <h3>Mesa:</h3>
           <input className="form-resumen" type="text" value={mesa} />
         </div>
-        <hr className="resumen-border" />
+        <hr className="resumen-border mt-3" />
         {/* Iterable */}
         <PedidosResum />
-        <PedidosResum />
-        <PedidosResum />
+
         {/* Total */}
         <div className="d-flex justify-content-end">
           <p>Total: $23500</p>

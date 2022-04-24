@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const inicio = () => {
   return (
-    <div className="container-fluid vh-100 container-color d-flex flex-column justify-content-evenly">
+    <main className="container-fluid vh-100 container--color d-flex flex-column justify-content-evenly">
       <div className="d-flex justify-content-center">
         <img
           className="img-logo"
@@ -20,7 +20,7 @@ const inicio = () => {
         <button className="button-inicio">Cocina</button>
         <button className="button-inicio">Pedidos listos</button>
       </div>
-    </div>
+    </main>
   );
 };
 

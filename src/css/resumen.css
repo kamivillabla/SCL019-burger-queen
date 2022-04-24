@@ -58,3 +58,17 @@ hr:not([size]) {
 .container-pedido {
   min-height: auto;
 }
+
+.button-contador {
+  font-size: 5rem;
+  color: #f1ca0d;
+  transition: 0.2s all;
+}
+
+.button-contador:active {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
