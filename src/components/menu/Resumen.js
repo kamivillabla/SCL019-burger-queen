@@ -7,7 +7,14 @@ import "../../App.css";
 import "../../css/resumen.css";
 
 const Resumen = () => {
-  const { name, mesa } = useContext(Context);
+  const { name, mesa, producto, setProductos } = useContext(Context);
+
+  // Suma total productos
+  const totalProductos = producto.reduce(
+    (total, product) => (total = total + product.price * product.count),
+    0
+  );
+  const total = totalProductos.toFixed(3);
 
   return (
     <>
@@ -32,7 +39,7 @@ const Resumen = () => {
 
         {/* Total */}
         <div className="d-flex justify-content-end">
-          <p>Total: $23500</p>
+          <p>Total: {total}</p>
         </div>
         <AnotacionesResum />
       </article>
