@@ -11,17 +11,19 @@ function ProductosTragos() {
   const agregarProducto = (element) => {
     return setProductos({
       ...producto,
-      // Some comprueba si al menos un elemento del array cumple con la condición implementada por la función proporcionada.
+      // guardar en mi array y comprobar que no este el producto
+      // si
       listOrder: producto.listOrder.some((product) => product.id === element.id)
         ? producto.listOrder.map((product) =>
             product.id === element.id
-              ? { ...product, count: product.count + 1 }
+              ? // si
+                { ...product, count: product.count + 1 }
               : product
           )
-        : [...producto.listOrder, { ...element, count: 1 }],
+        : // else
+          [...producto.listOrder, { ...element, count: 1 }],
     });
   };
-
   return (
     <>
       {menuTragos.map((tragos) => {

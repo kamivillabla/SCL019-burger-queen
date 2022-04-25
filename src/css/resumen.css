@@ -42,6 +42,7 @@ hr:not([size]) {
   background-color: var(--colorYellow);
   width: 1rem;
   height: 1rem;
+  margin-bottom: 1rem;
   /*   margin-top: 0.8rem; */
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -53,6 +54,7 @@ hr:not([size]) {
   font-size: 1.8rem;
   color: #f1ca0d;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .container-pedido {
@@ -63,6 +65,7 @@ hr:not([size]) {
   font-size: 5rem;
   color: #f1ca0d;
   transition: 0.2s all;
+  margin-bottom: 2rem;
 }
 
 .button-contador:active {
@@ -71,4 +74,12 @@ hr:not([size]) {
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
+}
+
+.container-pedido--anchura {
+  width: 7rem;
+}
+
+.parrafo-contador {
+  margin-top: 2.2rem;
 }

@@ -10,7 +10,7 @@ const Menu = () => {
     <div className="container--color">
       <NavBar />
       <main className="container-fluid container-menu d-flex flex-column align-items-center">
-        <section className="container row">
+        <section className="container-fluid row">
           {/* Menú */}
           <article className="col-12 col-md-6 container-tabmenu">
             <Tabmenu />
