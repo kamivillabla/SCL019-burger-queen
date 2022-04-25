@@ -11,7 +11,7 @@ const Resumen = () => {
 
   return (
     <>
-      <div className="container resumen-container mt-5">
+      <article className="container resumen-container mt-5">
         <div className="d-flex resumen-cliente mt-4">
           <h3>Cliente:</h3>
           <input
@@ -35,7 +35,7 @@ const Resumen = () => {
           <p>Total: $23500</p>
         </div>
         <AnotacionesResum />
-      </div>
+      </article>
       <button className="button-resumen">Enviar a cocina</button>
     </>
   );

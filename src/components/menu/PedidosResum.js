@@ -5,13 +5,15 @@ import "../../css/resumen.css";
 import "../../App.css";
 
 const PedidosResum = () => {
-  const { producto } = useContext(Context);
+  const { producto, setProductos } = useContext(Context);
+
+  // Eliminar producto
 
   return (
     <>
-      {producto.listOrder.map((element) => (
+      {producto.map((element, index) => (
         <div
-          key={element.id}
+          key={index}
           className="d-flex align-items-center container-pedido justify-content-evenly "
         >
           <span className="circle"></span>
@@ -22,7 +24,11 @@ const PedidosResum = () => {
             <p className="parrafo-contador">2</p>
             <button className="button-contador">+</button>
           </div>
-          <i className="fa-solid fa-trash-arrow-up resumen-icons"></i>
+          <i
+            className="fa-solid fa-trash-arrow-up resumen-icons"
+            // ! onClick={() => deleteItem(element.id)}
+          ></i>
+          .
         </div>
       ))}
     </>

@@ -14,7 +14,7 @@ const Tabmenu = () => {
   };
   return (
     <>
-      <div className="d-flex justify-content-center">
+      <article className="d-flex justify-content-center">
         <button
           className={
             tabState === 1
@@ -35,27 +35,17 @@ const Tabmenu = () => {
         >
           Tragos
         </button>
-      </div>
+      </article>
       {/* Componente form */}
       <Form />
 
       <div className={tabState === 1 ? "content  active-content" : "content"}>
         {/* Convertir a archivo .json para mostrarlo */}
-        <Productospizza
-          imagen="vegetariana"
-          nombre="Vegetariana"
-          ingredientes="Aceituna, piña, acelga"
-          precio="$7.990"
-        />
+        <Productospizza />
       </div>
 
       <div className={tabState === 2 ? "content  active-content" : "content"}>
-        <ProductosTragos
-          imagen="vegetariana"
-          nombre="Mojito"
-          ingredientes="de Frutilla"
-          precio="$4000"
-        />
+        <ProductosTragos />
       </div>
     </>
   );
