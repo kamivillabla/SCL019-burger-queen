@@ -55,7 +55,6 @@ function Productospizza() {
       //valor final del carrito
       setProductos(nuevoProducto);
     }
-    console.log(id, name, price);
   };
 
   return (
