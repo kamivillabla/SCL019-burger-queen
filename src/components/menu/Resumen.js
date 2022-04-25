@@ -7,7 +7,7 @@ import "../../App.css";
 import "../../css/resumen.css";
 
 const Resumen = () => {
-  const { name, mesa, producto, setProductos } = useContext(Context);
+  const { name, mesa, producto } = useContext(Context);
 
   // Suma total productos
   const totalProductos = producto.reduce(
@@ -43,7 +43,9 @@ const Resumen = () => {
         </div>
         <AnotacionesResum />
       </article>
-      <button className="button-resumen">Enviar a cocina</button>
+      <button type="submit" className="button-resumen">
+        Enviar a cocina
+      </button>
     </>
   );
 };
