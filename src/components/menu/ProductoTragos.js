@@ -24,13 +24,11 @@ function ProductosTragos() {
         nuevoProducto.forEach((element, index) => {
           if (element.id === id) {
             // Solo el valor del producto con el mismo id
-            const priceDos = nuevoProducto[index].price;
             const count = nuevoProducto[index].count;
-            console.log(priceDos);
             nuevoProducto[index] = {
               id: id,
               name: name,
-              price: price + priceDos,
+              price: price,
               count: count + 1,
             };
           }
