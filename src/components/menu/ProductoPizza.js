@@ -57,28 +57,28 @@ function Productospizza() {
 
   return (
     <>
-      {menuPizzas.map((e, index) => {
+      {menuPizzas.map((pizza, index) => {
         return (
           <button
             className="row mt-5 productos-container p-4"
             key={index}
-            onClick={() => agregarProducto(e.id, e.name, e.price)}
+            onClick={() => agregarProducto(pizza.id, pizza.name, pizza.price)}
           >
             <div className="col-12">
               <div className="row">
                 <div className="col-3">
                   <img
                     className="img-fluid"
-                    src={e.image}
-                    alt={`Imagen ${e.name}`}
+                    src={pizza.image}
+                    alt={`Imagen ${pizza.name}`}
                   />
                 </div>
                 <div className="col-7">
-                  <h3>{e.name}</h3>
-                  <p>{e.description}.</p>
+                  <h3>{pizza.name}</h3>
+                  <p>{pizza.description}.</p>
                 </div>
                 <div className="col-2">
-                  <p className="fw-bold">${e.price}</p>
+                  <p className="fw-bold">${pizza.price}</p>
                 </div>
               </div>
             </div>
