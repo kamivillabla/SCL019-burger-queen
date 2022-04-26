@@ -23,6 +23,12 @@ const PedidosResum = () => {
     setProductos(arrCard);
   };
 
+  // Eliminar producto:
+  const deleteItem = (id) => {
+    console.log(deleteItem);
+    setProductos([producto.filter((cartItem) => cartItem.id !== id)]);
+  };
+
   return (
     <>
       {producto.map((element, index) => (
@@ -48,10 +54,9 @@ const PedidosResum = () => {
               +
             </button>
           </div>
-          <i
-            className="fa-solid fa-trash-arrow-up resumen-icons"
-            // ! onClick={() => deleteItem(element.id)}
-          ></i>
+          <button onClick={() => deleteItem(element.id)}>
+            <i className="fa-solid fa-trash-arrow-up resumen-icons"></i>
+          </button>
           .
         </div>
       ))}
