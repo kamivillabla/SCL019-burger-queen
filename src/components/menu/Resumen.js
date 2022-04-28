@@ -14,7 +14,7 @@ const Resumen = () => {
     (total, product) => (total = total + product.price * product.count),
     0
   );
-  const total = totalProductos.toFixed(3);
+  const total = totalProductos;
 
   return (
     <>

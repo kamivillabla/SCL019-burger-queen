@@ -3,28 +3,28 @@
     {
       "id": "p1",
       "name": "Vegetariana",
-      "price": 9.999,
+      "price": 9999,
       "description": "Queso mozzarella, cebolla, pimiento verde, tomate, champiñon.",
       "image": "images/img-vegetariana.png"
     },
     {
       "id": "p2",
       "name": "Vegan queso",
-      "price": 7.999,
+      "price": 7999,
       "description": "Queso vegano, tomate, albahaca",
       "image": "images/img-veganqueso.png"
     },
     {
       "id": "p3",
       "name": "Vegan choclo",
-      "price": 8.999,
+      "price": 8999,
       "description": "Queso vegano, tomate, champiñon, choclo",
       "image": "images/img-veganchoclo.png"
     },
     {
       "id": "p4",
       "name": "Vegan brocoli",
-      "price": 8.999,
+      "price": 8999,
       "description": "Queso vegano, tomate, brocoli, aceitunas",
       "image": "images/img-veganbrocoli.png"
     }
@@ -34,28 +34,28 @@
     {
       "id": "t1",
       "name": "Kross Stout",
-      "price": 2.999,
+      "price": 2999,
       "description": "Cerveza negra, Shop de 500cc",
       "image": "images/img-kross.png"
     },
     {
       "id": "t2",
       "name": "Mojito",
-      "price": 3.999,
+      "price": 3999,
       "description": "Vodka, sabores: frutilla, naranja, piña, Vaso de 500cc",
       "image": "images/img-mojito.png"
     },
     {
       "id": "t3",
       "name": "Cuba libre",
-      "price": 3.999,
+      "price": 3999,
       "description": "Ron blanco, Vaso Tumbler",
       "image": "images/img-cubalibre.png"
     },
     {
       "id": "t4",
       "name": "Jugo a elección",
-      "price": 2.999,
+      "price": 2999,
       "description": "Mango, Naranja, frutilla y menta",
       "image": "images/img-jugo.png"
     }

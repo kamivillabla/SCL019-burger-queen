@@ -24,9 +24,12 @@ const PedidosResum = () => {
   };
 
   // Eliminar producto:
-  const deleteItem = (id) => {
-    console.log(deleteItem);
-    setProductos([producto.filter((cartItem) => cartItem.id !== id)]);
+  //Función para eliminar productos
+  const deleteItem = (product) => {
+    const exist = producto.find((item) => item.id === product.id);
+    if (exist.count) {
+      setProductos(producto.filter((item) => item.id !== product.id));
+    }
   };
 
   return (
@@ -54,10 +57,9 @@ const PedidosResum = () => {
               +
             </button>
           </div>
-          <button onClick={() => deleteItem(element.id)}>
+          <button onClick={() => deleteItem(element)}>
             <i className="fa-solid fa-trash-arrow-up resumen-icons"></i>
           </button>
-          .
         </div>
       ))}
     </>
