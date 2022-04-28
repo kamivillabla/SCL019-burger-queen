@@ -57,11 +57,11 @@ function Productospizza() {
 
   return (
     <>
-      {menuPizzas.map((pizza, index) => {
+      {menuPizzas.map((pizza) => {
         return (
           <button
             className="row mt-5 productos-container p-4"
-            key={index}
+            key={pizza.id}
             onClick={() => agregarProducto(pizza.id, pizza.name, pizza.price)}
           >
             <div className="col-12">

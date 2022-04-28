@@ -24,11 +24,10 @@ const PedidosResum = () => {
   };
 
   // Eliminar producto:
-  //Función para eliminar productos
-  const deleteItem = (product) => {
-    const exist = producto.find((item) => item.id === product.id);
-    if (exist.count) {
-      setProductos(producto.filter((item) => item.id !== product.id));
+  const deleteItem = (element) => {
+    const elimProduct = producto.find((item) => item.id === element.id);
+    if (elimProduct.count) {
+      setProductos(producto.filter((item) => item.id !== element.id));
     }
   };
 

@@ -4,6 +4,7 @@ import { Context } from "../../context/UseContext";
 import "../../css/productos.css";
 import "../../App.css";
 import menu from "../../dataJson/menu.json";
+import Productospizza from "./ProductoPizza";
 /* ({}) = desestructuración seria igual que poner props.nombre */
 function ProductosTragos() {
   const { producto, setProductos } = useContext(Context);
@@ -49,11 +50,11 @@ function ProductosTragos() {
 
   return (
     <>
-      {menuTragos.map((tragos, index) => {
+      {menuTragos.map((tragos) => {
         return (
           <button
             className="row mt-5 productos-container p-4"
-            key={index}
+            key={tragos.id}
             onClick={() =>
               agregarProducto(tragos.id, tragos.name, tragos.price)
             }
