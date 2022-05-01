@@ -2,12 +2,13 @@ import React from "react";
 import { useContext } from "react";
 import { Context } from "../../context/UseContext";
 import menu from "../../dataJson/menu.json";
-import "../../css/productos.css";
-import "../../App.css";
+/* Estilos css */
+import "../../css/productsFood.css";
+
 /* ({}) = desestructuración seria igual que poner props.nombre */
 
-function Productospizza() {
-  const { producto, setProductos } = useContext(Context);
+function PizzaProduct() {
+  const { productFood, setProductFood } = useContext(Context);
   const menuPizzas = menu.pizzas;
 
   /*  const agregarProducto = (element) => {
@@ -19,21 +20,21 @@ function Productospizza() {
   }; */
 
   const agregarProducto = (id, name, price) => {
-    if (producto.length === 0) {
-      setProductos([{ id: id, name: name, price: price, count: 1 }]);
+    if (productFood.length === 0) {
+      setProductFood([{ id: id, name: name, price: price, count: 1 }]);
     } else {
-      const nuevoProducto = [...producto];
+      const newProductFood = [...productFood];
       // Compruebo si ya existe el producto
-      const arrCard = nuevoProducto.some((element) => {
+      const arrCard = newProductFood.some((element) => {
         return element.id === id;
       });
       //Si ya existe lo aumento
       if (arrCard) {
-        nuevoProducto.forEach((element, index) => {
+        newProductFood.forEach((element, index) => {
           if (element.id === id) {
             // Solo el valor del producto con el mismo id
-            const count = nuevoProducto[index].count;
-            nuevoProducto[index] = {
+            const count = newProductFood[index].count;
+            newProductFood[index] = {
               id: id,
               name: name,
               price: price,
@@ -43,7 +44,7 @@ function Productospizza() {
         });
       } else {
         //Si no existe lo creo
-        nuevoProducto.push({
+        newProductFood.push({
           id: id,
           name: name,
           price: price,
@@ -51,7 +52,7 @@ function Productospizza() {
         });
       }
       //valor final del carrito
-      setProductos(nuevoProducto);
+      setProductFood(newProductFood);
     }
   };
 
@@ -60,7 +61,7 @@ function Productospizza() {
       {menuPizzas.map((pizza) => {
         return (
           <button
-            className="row mt-5 productos-container p-4"
+            className="row mt-5 productFood__container p-4"
             key={pizza.id}
             onClick={() => agregarProducto(pizza.id, pizza.name, pizza.price)}
           >
@@ -89,4 +90,4 @@ function Productospizza() {
   );
 }
 
-export default Productospizza;
+export default PizzaProduct;

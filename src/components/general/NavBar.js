@@ -1,15 +1,15 @@
 import React from "react";
-import "../css/nav.css";
-import "../App.css";
 import { Link } from "react-router-dom";
+/* Estilos css */
+import "../../css/navbar.css";
 
 const NavBar = () => {
   return (
     <>
-      <nav className="navbar navbar-container">
+      <nav className="navbar navbar__container">
         <div className="container-fluid d-flex justify-content-end">
           <Link to="/">
-            <i className="fa-solid fa-arrow-left nav-icons"></i>
+            <i className="fa-solid fa-arrow-left navbar__icons"></i>
           </Link>
         </div>
       </nav>

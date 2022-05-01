@@ -1,4 +1,4 @@
-.productos-container {
+.productFood__container {
   min-height: auto;
   width: 100%;
   background-color: whitesmoke;
@@ -15,7 +15,7 @@
   transition: 0.2s all;
 }
 
-.productos-container:active {
+.productFood__container:active {
   transform: scale(0.98);
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);

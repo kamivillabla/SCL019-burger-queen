@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import "../../css/tabMenu.css";
-import "../../App.css";
-import Productospizza from "./ProductoPizza";
-import ProductosTragos from "./ProductoTragos";
-import Form from "./Form";
 
-const Tabmenu = () => {
+import PizzaProduct from "./PizzaProduct";
+import DrinksProduct from "./DrinksProduct";
+import FormNameandTable from "./FormNameandTable";
+/* Estilos css */
+import "../../css/menuProducts.css";
+
+const MenuProducts = () => {
   // Estado actual y la función que la actualiza
   const [tabState, settabState] = useState(1);
 
@@ -37,18 +38,18 @@ const Tabmenu = () => {
         </button>
       </article>
       {/* Componente form */}
-      <Form />
+      <FormNameandTable />
 
       <div className={tabState === 1 ? "content  active-content" : "content"}>
         {/* Convertir a archivo .json para mostrarlo */}
-        <Productospizza />
+        <PizzaProduct />
       </div>
 
       <div className={tabState === 2 ? "content  active-content" : "content"}>
-        <ProductosTragos />
+        <DrinksProduct />
       </div>
     </>
   );
 };
 
-export default Tabmenu;
+export default MenuProducts;

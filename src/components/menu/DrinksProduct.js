@@ -1,32 +1,32 @@
 import React from "react";
 import { useContext } from "react";
 import { Context } from "../../context/UseContext";
-import "../../css/productos.css";
-import "../../App.css";
 import menu from "../../dataJson/menu.json";
-import Productospizza from "./ProductoPizza";
+/* Estilos css */
+import "../../css/productsFood.css";
+
 /* ({}) = desestructuración seria igual que poner props.nombre */
-function ProductosTragos() {
-  const { producto, setProductos } = useContext(Context);
+function DrinksProduct() {
+  const { productFood, setProductFood } = useContext(Context);
 
-  const menuTragos = menu.tragos;
+  const menuDrinks = menu.drinks;
 
-  const agregarProducto = (id, name, price) => {
-    if (producto.length === 0) {
-      setProductos([{ id: id, name: name, price: price, count: 1 }]);
+  const addProductFood = (id, name, price) => {
+    if (productFood.length === 0) {
+      setProductFood([{ id: id, name: name, price: price, count: 1 }]);
     } else {
-      const nuevoProducto = [...producto];
+      const newProductFood = [...productFood];
       // Compruebo si ya existe el producto
-      const arrCard = nuevoProducto.some((element) => {
+      const arrCard = newProductFood.some((element) => {
         return element.id === id;
       });
       //Si ya existe lo aumento
       if (arrCard) {
-        nuevoProducto.forEach((element, index) => {
+        newProductFood.forEach((element, index) => {
           if (element.id === id) {
             // Solo el valor del producto con el mismo id
-            const count = nuevoProducto[index].count;
-            nuevoProducto[index] = {
+            const count = newProductFood[index].count;
+            newProductFood[index] = {
               id: id,
               name: name,
               price: price,
@@ -36,7 +36,7 @@ function ProductosTragos() {
         });
       } else {
         //Si no existe lo creo
-        nuevoProducto.push({
+        newProductFood.push({
           id: id,
           name: name,
           price: price,
@@ -44,36 +44,34 @@ function ProductosTragos() {
         });
       }
       //valor final del carrito
-      setProductos(nuevoProducto);
+      setProductFood(newProductFood);
     }
   };
 
   return (
     <>
-      {menuTragos.map((tragos) => {
+      {menuDrinks.map((drinks) => {
         return (
           <button
-            className="row mt-5 productos-container p-4"
-            key={tragos.id}
-            onClick={() =>
-              agregarProducto(tragos.id, tragos.name, tragos.price)
-            }
+            className="row mt-5 productFood__container p-4"
+            key={drinks.id}
+            onClick={() => addProductFood(drinks.id, drinks.name, drinks.price)}
           >
             <div className="col-12">
               <div className="row">
                 <div className="col-3">
                   <img
                     className="img-fluid"
-                    src={tragos.image}
-                    alt={`Imagen ${tragos.name}`}
+                    src={drinks.image}
+                    alt={`Imagen ${drinks.name}`}
                   />{" "}
                 </div>
                 <div className="col-7">
-                  <h3>{tragos.name}</h3>
-                  <p>{tragos.description}.</p>
+                  <h3>{drinks.name}</h3>
+                  <p>{drinks.description}.</p>
                 </div>
                 <div className="col-2">
-                  <p className="fw-bold">${tragos.price}</p>
+                  <p className="fw-bold">${drinks.price}</p>
                 </div>
               </div>
             </div>
@@ -84,4 +82,4 @@ function ProductosTragos() {
   );
 }
 
-export default ProductosTragos;
+export default DrinksProduct;
