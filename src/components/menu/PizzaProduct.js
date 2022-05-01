@@ -19,7 +19,7 @@ function PizzaProduct() {
     });
   }; */
 
-  const agregarProducto = (id, name, price) => {
+  const addProductFood = (id, name, price) => {
     if (productFood.length === 0) {
       setProductFood([{ id: id, name: name, price: price, count: 1 }]);
     } else {
@@ -63,7 +63,7 @@ function PizzaProduct() {
           <button
             className="row mt-5 productFood__container p-4"
             key={pizza.id}
-            onClick={() => agregarProducto(pizza.id, pizza.name, pizza.price)}
+            onClick={() => addProductFood(pizza.id, pizza.name, pizza.price)}
           >
             <div className="col-12">
               <div className="row">
@@ -79,7 +79,9 @@ function PizzaProduct() {
                   <p>{pizza.description}.</p>
                 </div>
                 <div className="col-2">
-                  <p className="fw-bold">${pizza.price}</p>
+                  <p className="fw-bold">
+                    ${pizza.price.toLocaleString("es-CL")}
+                  </p>
                 </div>
               </div>
             </div>

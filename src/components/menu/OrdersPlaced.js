@@ -41,7 +41,7 @@ const OrdersPlaced = () => {
           <span className="circle"></span>
           <p className="justify-self-start">{element.name}</p>
           <p>${element.price}</p>
-          <div className="d-flex orderPlaced__width justify-content-around">
+          <div className="d-flex orderPlaced__width justify-content-around align-items-center">
             <span
               onClick={() => subtractProducts(element.id)}
               className="orderPlaced__btnCount"

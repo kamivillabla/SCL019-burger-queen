@@ -19,7 +19,7 @@ const MenuOrder = () => {
     (total, product) => (total = total + product.price * product.count),
     0
   );
-  const total = totalProducts;
+  const total = totalProducts.toLocaleString("es-CL");
 
   /* Agregar a base de datos de firebase */
   const addOrder = async (e) => {
@@ -43,7 +43,7 @@ const MenuOrder = () => {
     <>
       <form onSubmit={(e) => addOrder(e)}>
         <article className="container menuOrder__container mt-5">
-          <div className="d-flex menuOrder__clientName mt-4">
+          <div className="d-flex menuOrder__clientName pt-5">
             <h3>Cliente:</h3>
             <input
               className="menuOrder__formClient"
@@ -65,8 +65,8 @@ const MenuOrder = () => {
           {/* Los pedidos iterables */}
           <OrdersPlaced />
           {/* Total */}
-          <div className="d-flex justify-content-end">
-            <p>Total: {total}</p>
+          <div className="d-flex justify-content-center">
+            <p className="menuOrder__total">Total: $ {total}</p>
           </div>
           <CommentsOrder />
         </article>

@@ -71,7 +71,9 @@ function DrinksProduct() {
                   <p>{drinks.description}.</p>
                 </div>
                 <div className="col-2">
-                  <p className="fw-bold">${drinks.price}</p>
+                  <p className="fw-bold">
+                    ${drinks.price.toLocaleString("es-CL")}
+                  </p>
                 </div>
               </div>
             </div>

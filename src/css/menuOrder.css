@@ -65,9 +65,13 @@ hr:not([size]) {
 }
 
 .orderPlaced__width {
-  width: 7rem;
+  width: auto;
 }
 
 .orderPlaced__paragraph {
-  margin-top: 2.2rem;
+  padding: 0 1rem;
+}
+
+.menuOrder__total {
+  font-weight: bold;
 }
