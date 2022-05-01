@@ -12,7 +12,7 @@ import BtnSendToKitchen from "./BtnSendToKitchen";
 /* Estilos css */
 import "../../css/menuOrder.css";
 const MenuOrder = () => {
-  const { clientName, table, productFood } = useContext(Context);
+  const { clientName, table, productFood, comment } = useContext(Context);
 
   // Suma total productos
   const totalProducts = productFood.reduce(
@@ -31,6 +31,7 @@ const MenuOrder = () => {
         clientTable: table,
         total: total,
         order: productFood,
+        comment: comment,
         state: "cocinando",
       });
       console.log("Document written with ID: ", docRef.id);
