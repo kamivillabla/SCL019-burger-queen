@@ -1,0 +1,13 @@
+.container-menu {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+}
+.resumen-text {
+  font-size: 3.5rem;
+  color: white;
+}
+/* .container-tabmenu, */
+.container-resumen {
+  padding-left: 5rem;
+}
