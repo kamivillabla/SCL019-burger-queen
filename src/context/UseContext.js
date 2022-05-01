@@ -11,7 +11,7 @@ export const DatosContext = ({ children }) => {
   const [productFood, setProductFood] = useState([]);
   const [clientName, setClientName] = useState("");
   const [table, setTable] = useState("");
-  const [comment, setComment] = useState("nada que comentar");
+  const [comment, setComment] = useState("");
 
   return (
     <>

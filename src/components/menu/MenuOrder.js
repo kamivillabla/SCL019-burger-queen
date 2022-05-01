@@ -5,10 +5,12 @@ import { db } from "../../firebase/configfirebase";
 import {
   collection,
   addDoc,
+  Timestamp,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 import CommentsOrder from "./CommentsOrder";
 import OrdersPlaced from "./OrdersPlaced";
 import BtnSendToKitchen from "./BtnSendToKitchen";
+
 /* Estilos css */
 import "../../css/menuOrder.css";
 const MenuOrder = () => {
@@ -24,7 +26,15 @@ const MenuOrder = () => {
   /* Agregar a base de datos de firebase */
   const addOrder = async (e) => {
     e.preventDefault();
-    console.log("Funciona aaaa!!");
+    /* Alert & Manejo de errores */
+    if (!clientName.trim() || !table.trim() || table === "N° Mesa") {
+      alert("registra los datos");
+      return;
+    } else if (productFood.length === 0) {
+      alert("El pedido esta vacio");
+      return;
+    }
+    console.log("Pedido enviado");
     try {
       const docRef = await addDoc(collection(db, "order"), {
         clientName: clientName,
@@ -32,6 +42,7 @@ const MenuOrder = () => {
         total: total,
         order: productFood,
         comment: comment,
+        dateTime: Timestamp.fromDate(new Date()),
         state: "cocinando",
       });
       console.log("Document written with ID: ", docRef.id);
@@ -67,7 +78,7 @@ const MenuOrder = () => {
           <OrdersPlaced />
           {/* Total */}
           <div className="d-flex justify-content-center">
-            <p className="menuOrder__total">Total: $ {total}</p>
+            <p className="menuOrder__total pt-5">Total: $ {total}</p>
           </div>
           <CommentsOrder />
         </article>
