@@ -10,6 +10,7 @@ import {
 import CommentsOrder from "./CommentsOrder";
 import OrdersPlaced from "./OrdersPlaced";
 import BtnSendToKitchen from "./BtnSendToKitchen";
+import Swal from "sweetalert2";
 
 /* Estilos css */
 import "../../css/menuOrder.css";
@@ -23,18 +24,59 @@ const MenuOrder = () => {
   );
   const total = totalProducts.toLocaleString("es-CL");
 
+  /* Funcion Manejo de errores */
+  const error = () => {
+    Swal.fire({
+      icon: "error",
+      title: "Falta nombre de cliente y/o mesa",
+      confirmButtonText: "Aceptar",
+      background: "rgba(54, 57, 60, 0.8)",
+      confirmButtonColor: "#595959",
+      color: "#fff",
+      titleColor: "#fff",
+      width: "45rem",
+      customClass: {
+        confirmButton: "color",
+      },
+    });
+  };
+  const errorProducts = () => {
+    Swal.fire({
+      icon: "error",
+      title: "No hay productos agregados",
+      confirmButtonText: "Aceptar",
+      background: "rgba(54, 57, 60, 0.8)",
+      confirmButtonColor: "#595959",
+      color: "#fff",
+      titleColor: "#fff",
+      width: "45rem",
+    });
+  };
+
+  const correct = () => {
+    Swal.fire({
+      icon: "success",
+      title: "La orden a sido enviada a la cocina correctamente",
+      confirmButtonText: "Aceptar",
+      background: "rgba(54, 57, 60, 0.8)",
+      confirmButtonColor: "#595959",
+      color: "#fff",
+      titleColor: "#fff",
+      width: "45rem",
+    });
+  };
+
   /* Agregar a base de datos de firebase */
   const addOrder = async (e) => {
     e.preventDefault();
     /* Alert & Manejo de errores */
     if (!clientName.trim() || !table.trim() || table === "N° Mesa") {
-      alert("registra los datos");
-      return;
+      return error();
     } else if (productFood.length === 0) {
-      alert("El pedido esta vacio");
-      return;
+      return errorProducts();
     }
-    console.log("Pedido enviado");
+    correct();
+
     try {
       const docRef = await addDoc(collection(db, "order"), {
         clientName: clientName,

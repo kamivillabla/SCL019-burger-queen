@@ -2,6 +2,8 @@ import React from "react";
 import MenuProducts from "../components/menu/MenuProducts";
 import MenuOrder from "../components/menu/MenuOrder";
 import NavBar from "../components/general/NavBar";
+
+
 /* Estilos css */
 import "../css/page-menu.css";
 import "../App.css";
