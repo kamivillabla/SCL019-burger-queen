@@ -62,7 +62,7 @@ const MenuOrder = () => {
               type="text"
               placeholder="Nombre cliente"
               value={clientName}
-              readOnly
+              readOnly="readonly"
             />
           </div>
           <div className="d-flex menuOrder__clientTable">
@@ -71,9 +71,10 @@ const MenuOrder = () => {
               className="menuOrder__formClient"
               type="text"
               value={table}
+              readOnly="readonly"
             />
           </div>
-          <hr className="menuOrder__border mt-3" />
+          <hr className="borderHr mt-3" />
           {/* Los pedidos iterables */}
           <OrdersPlaced />
           {/* Total */}

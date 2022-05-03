@@ -28,16 +28,6 @@
   margin-left: 1rem;
 }
 
-.menuOrder__border {
-  border: none;
-  color: var(--colorYellow);
-}
-hr:not([size]) {
-  height: 3px;
-  width: 80%;
-  margin: 0 auto;
-}
-
 .resumen-icons {
   font-size: 1.8rem;
   color: #f1ca0d;

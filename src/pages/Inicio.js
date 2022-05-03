@@ -17,7 +17,9 @@ const inicio = () => {
         <Link className="button-inicio" to="/Menu">
           Menú
         </Link>
-        <button className="button-inicio">Cocina</button>
+        <Link className="button-inicio" to="/Cocina">
+          Cocina
+        </Link>
         <button className="button-inicio">Pedidos listos</button>
       </div>
     </main>

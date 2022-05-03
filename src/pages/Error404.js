@@ -13,7 +13,7 @@ const Error404 = () => {
             <img
               className="img-fluid"
               src={require("../img/notfound.png")}
-              alt=""
+              alt="imagen de error 404"
             />
             <h2 className="text-center">Vuelve al Inicio Haciendo click: </h2>
             <Link className="d-flex justify-content-center" to="/">
