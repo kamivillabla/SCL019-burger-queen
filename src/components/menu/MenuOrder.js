@@ -42,8 +42,9 @@ const MenuOrder = () => {
         total: total,
         order: productFood,
         comment: comment,
+        /*     count: count, */
         dateTime: Timestamp.fromDate(new Date()),
-        state: "cocinando",
+        state: "Pendiente",
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
