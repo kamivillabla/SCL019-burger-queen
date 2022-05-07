@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../../context/UseContext";
-import OrderKitchenProducts from "../kitchen/OrderKitchenProducts";
+import OrderProducts from "../general/OrderProducts";
 import Comment from "../kitchen/Comment";
 import "../../css/page-kitchen.css";
 import { db } from "../../firebase/configfirebase";
@@ -65,13 +65,11 @@ const OrderReady = () => {
             <hr className="borderHr mt-3" />
             {/* Los pedidos iterables */}
             {order.order.map((item) => (
-              <>
-                <OrderKitchenProducts
-                  id={item.id}
-                  name={item.name}
-                  count={item.count}
-                />
-              </>
+              <OrderProducts
+                key={item.id}
+                name={item.name}
+                count={item.count}
+              />
             ))}
             <hr className="borderHr mt-3" />
             {/*  <CommentKitchen /> */}
