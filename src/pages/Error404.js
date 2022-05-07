@@ -2,7 +2,6 @@ import React from "react";
 import "../css/page-error404.css";
 import { Link } from "react-router-dom";
 /* Estilos css */
-import "../css/page-error404.css";
 
 const Error404 = () => {
   return (
