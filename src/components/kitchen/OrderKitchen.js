@@ -1,10 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../../context/UseContext";
 import OrderProducts from "../general/OrderProducts";
-import Comment from "./Comment";
-/* import ButtonProgres from "./ButtonProgres"; */
+import Comment from "../general/Comment";
 import "../../css/page-kitchen.css";
-import "../../css/btnSendToKitchen.css";
+import "../../css/btnSendTo.css";
 import { db } from "../../firebase/configfirebase";
 import {
   collection,
@@ -74,7 +73,7 @@ const OrderKitchen = () => {
             <p className="text-center">Estado: {order.state}...</p>
             <button
               type="submit"
-              className="btnSendToKitchen__btn"
+              className="ordersKitchen__btn mt-3"
               onClick={(e) => updateStatus(e, "Listo", order.id)}
             >
               Pedido Listo

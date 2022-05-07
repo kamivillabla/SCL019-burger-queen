@@ -1,0 +1,11 @@
+.ordersKitchen__btn {
+  font-size: 1.8rem;
+  background-color: var(--colorYellow);
+  width: 100%;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 2rem 0px;
+}
