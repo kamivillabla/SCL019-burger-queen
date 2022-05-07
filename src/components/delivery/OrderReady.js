@@ -1,11 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../../context/UseContext";
-import OrderKitchenProducts from "./OrderKitchenProducts";
-import Comment from "./Comment";
-/* import ButtonProgres from "./ButtonProgres"; */
+import OrderKitchenProducts from "../kitchen/OrderKitchenProducts";
+import Comment from "../kitchen/Comment";
 import "../../css/page-kitchen.css";
-import "../../css/btnSendToKitchen.css";
 import { db } from "../../firebase/configfirebase";
+
 import {
   collection,
   onSnapshot,
@@ -15,8 +14,8 @@ import {
   doc,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
-const OrderKitchen = () => {
-  const { orderKitchen, setOrderKitchen } = useContext(Context);
+const OrderReady = () => {
+  const { orderDelivery, setOrderDelivery } = useContext(Context);
 
   useEffect(() => {
     onSnapshot(
@@ -25,7 +24,7 @@ const OrderKitchen = () => {
         const products = snapshot.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
         });
-        setOrderKitchen(products);
+        setOrderDelivery(products);
       },
       (err) => {
         console.log(err);
@@ -46,15 +45,15 @@ const OrderKitchen = () => {
     }
   };
 
-  // Filtrado de pedidos Pendientes
-  let ordersReadyKitchen = orderKitchen.filter((order) => {
-    return order.state === "Cocinando";
+  // Filtrado de pedidos listos
+  let ordersReady = orderDelivery.filter((order) => {
+    return order.state === "Listo";
   });
 
   return (
     <>
-      {ordersReadyKitchen.map((order) => (
-        <article key={order.id} className="orderKitchen ">
+      {ordersReady.map((order) => (
+        <article key={order.id} className="orderKitchen">
           <form onSubmit={updateStatus}>
             <div className="orderKitchen__cliente pt-5">
               <h4>Cliente: {order.clientName}</h4>
@@ -75,15 +74,15 @@ const OrderKitchen = () => {
               </>
             ))}
             <hr className="borderHr mt-3" />
+            {/*  <CommentKitchen /> */}
             <Comment comment={order.comment} />
-
             <p className="text-center">Estado: {order.state}...</p>
             <button
               type="submit"
               className="btnSendToKitchen__btn"
-              onClick={(e) => updateStatus(e, "Listo", order.id)}
+              onClick={(e) => updateStatus(e, "Entregado", order.id)}
             >
-              Pedido Listo
+              Listo para servir
             </button>
           </form>
         </article>
@@ -93,4 +92,4 @@ const OrderKitchen = () => {
   );
 };
 
-export default OrderKitchen;
+export default OrderReady;

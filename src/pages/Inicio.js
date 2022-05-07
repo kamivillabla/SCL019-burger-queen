@@ -20,7 +20,9 @@ const inicio = () => {
         <Link className="button-inicio" to="/Cocina">
           Cocina
         </Link>
-        <button className="button-inicio">Pedidos listos</button>
+        <Link className="button-inicio" to="/Entregar">
+          Pedidos Listos
+        </Link>
       </div>
     </main>
   );

@@ -6,7 +6,6 @@ import { db } from "../../firebase/configfirebase";
 import {
   collection,
   addDoc,
-  Timestamp,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 import CommentsOrder from "./CommentsOrder";
 import OrdersPlaced from "./OrdersPlaced";
@@ -15,7 +14,16 @@ import BtnSendToKitchen from "./BtnSendToKitchen";
 /* Estilos css */
 import "../../css/menuOrder.css";
 const MenuOrder = () => {
-  const { clientName, table, productFood, comment } = useContext(Context);
+  const {
+    clientName,
+    setClientName,
+    table,
+    setTable,
+    productFood,
+    setProductFood,
+    comment,
+    setComment,
+  } = useContext(Context);
 
   // Suma total productos
   const totalProducts = productFood.reduce(
@@ -42,14 +50,16 @@ const MenuOrder = () => {
         total: total,
         order: productFood,
         comment: comment,
-        /*     count: count, */
-        dateTime: Timestamp.fromDate(new Date()),
-        state: "Pendiente",
+        state: "Cocinando",
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+    setClientName("");
+    setProductFood([]);
+    setTable("");
+    setComment("");
   };
 
   return (
