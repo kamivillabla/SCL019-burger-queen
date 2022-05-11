@@ -47,7 +47,7 @@ const OrderKitchen = () => {
 
   // Filtrado de pedidos Pendientes
   let ordersReadyKitchen = orderKitchen.filter((order) => {
-    return order.state === "Cocinando";
+    return order.state === "Cocinando" || order.state === "Listo";
   });
 
   return (

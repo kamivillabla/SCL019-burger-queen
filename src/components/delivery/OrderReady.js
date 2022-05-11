@@ -49,7 +49,7 @@ const OrderReady = () => {
 
   // Filtrado de pedidos listos
   let ordersReady = orderDelivery.filter((order) => {
-    return order.state === "Listo";
+    return order.state === "Listo" || order.state === "Entregado";
   });
 
   return (
