@@ -1,0 +1,22 @@
+.ordersKitchen__btn {
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  background-color: var(--colorYellow);
+  width: 94%;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 2rem 0px;
+
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+  transition: 0.2s all;
+}
+
+.ordersKitchen__btn:active {
+  transform: scale(0.98);
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+}

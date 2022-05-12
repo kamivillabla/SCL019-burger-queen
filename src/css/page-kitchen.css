@@ -1,0 +1,36 @@
+.orderKitchen {
+  background-color: whitesmoke;
+  width: 30rem;
+  min-height: auto;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+}
+.orderKitchen__cliente {
+  line-height: 0;
+}
+.orderKitchen__cliente p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.orderKitchen--colorGreen,
+.orderKitchen--colorRed {
+  font-weight: bold;
+  margin-left: 1.5rem;
+}
+.orderKitchen--colorGreen {
+  color: green;
+}
+.orderKitchen--colorRed {
+  color: red;
+}
+.orderKitchen__titleState {
+  color: black;
+}

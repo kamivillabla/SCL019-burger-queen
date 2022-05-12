@@ -1,0 +1,114 @@
+import React, { useEffect, useContext } from "react";
+import { Context } from "../../context/UseContext";
+import OrderProducts from "../general/OrderProducts";
+import Comment from "../general/Comment";
+import "../../css/page-kitchen.css";
+import "../../css/btnSendTo.css";
+
+import { db } from "../../firebase/configfirebase";
+
+import {
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  updateDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+
+const OrderReady = () => {
+  const { orderDelivery, setOrderDelivery } = useContext(Context);
+
+  useEffect(() => {
+    onSnapshot(
+      query(collection(db, "order"), orderBy("order", "desc")),
+      (snapshot) => {
+        const products = snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setOrderDelivery(products);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  });
+
+  const updateStatus = async (e, state, id) => {
+    e.preventDefault();
+    try {
+      await updateDoc(doc(db, "order", id), {
+        state: state,
+      });
+      console.log("El pedido fue enviado a delivery con exito");
+    } catch (error) {
+      console.log("Error al actualizar el pedido");
+      console.log(error);
+    }
+  };
+
+  // Filtrado de pedidos listos
+  let ordersReady = orderDelivery.filter((order) => {
+    return order.state === "Listo para delivery" || order.state === "Entregado";
+  });
+
+  return (
+    <>
+      {ordersReady.length > 0 ? (
+        ordersReady.map((order) => (
+          <article key={order.id} className="mt-3">
+            <form onSubmit={updateStatus} className="orderKitchen">
+              <div className="orderKitchen__cliente pt-2">
+                <h4>Cliente: {order.clientName}</h4>
+              </div>
+              <div className="orderKitchen__cliente">
+                <h4>Mesa:{order.clientTable}</h4>
+              </div>
+              <p>{order.time}</p>
+              <hr className="borderHr mt-3" />
+              {/* Los pedidos iterables */}
+              {order.order.map((item) => (
+                <OrderProducts
+                  key={item.id}
+                  name={item.name}
+                  count={item.count}
+                />
+              ))}
+              <hr className="borderHr mt-3" />
+              {/*  <CommentKitchen /> */}
+              <Comment comment={order.comment} />
+              <p
+                className={
+                  order.state !== "Listo para delivery"
+                    ? "orderKitchen--colorGreen"
+                    : "orderKitchen--colorRed"
+                }
+              >
+                <span className="orderKitchen__titleState">Estado:</span>
+                {order.state === "Listo para delivery"
+                  ? " Listo para entregar"
+                  : " " + order.state}
+              </p>
+            </form>
+            <button
+              type="submit"
+              className="ordersKitchen__btn mt-1"
+              onClick={(e) => updateStatus(e, "Entregado", order.id)}
+            >
+              Entregar
+            </button>
+          </article>
+        ))
+      ) : (
+        <article>
+          <h2 className="text-white mt-5">
+            No hay pedidos para entregar a las mesas
+          </h2>
+        </article>
+      )}
+      ;
+    </>
+  );
+};
+
+export default OrderReady;

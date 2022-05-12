@@ -1,0 +1,23 @@
+.btnSendToKitchen__btn {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  background-color: var(--colorYellow);
+  width: 100%;
+  height: 8rem;
+  cursor: pointer;
+  text-align: center;
+  line-height: 8rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+  transition: 0.2s all;
+}
+.btnSendToKitchen__btn:active {
+  transform: scale(0.98);
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.308);
+}

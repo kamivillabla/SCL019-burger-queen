@@ -8,20 +8,29 @@ import React, { createContext, useState } from "react";
 export const Context = createContext();
 
 export const DatosContext = ({ children }) => {
-  const [producto, setProductos] = useState([]);
-  const [name, setName] = useState("");
-  const [mesa, setMesa] = useState("");
+  const [productFood, setProductFood] = useState([]);
+  const [clientName, setClientName] = useState("");
+  const [table, setTable] = useState("");
+  const [comment, setComment] = useState("");
+  const [orderKitchen, setOrderKitchen] = useState([]);
+  const [orderDelivery, setOrderDelivery] = useState([]);
 
   return (
     <>
       <Context.Provider
         value={{
-          producto,
-          setProductos,
-          name,
-          setName,
-          mesa,
-          setMesa,
+          productFood,
+          setProductFood,
+          clientName,
+          setClientName,
+          table,
+          setTable,
+          comment,
+          setComment,
+          orderKitchen,
+          setOrderKitchen,
+          orderDelivery,
+          setOrderDelivery,
         }}
       >
         {children}

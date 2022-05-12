@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/page-inicio.css";
-import "../App.css";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const inicio = () => {
   return (
@@ -17,8 +17,12 @@ const inicio = () => {
         <Link className="button-inicio" to="/Menu">
           Menú
         </Link>
-        <button className="button-inicio">Cocina</button>
-        <button className="button-inicio">Pedidos listos</button>
+        <Link className="button-inicio" to="/Cocina">
+          Cocina
+        </Link>
+        <Link className="button-inicio" to="/Entregar">
+          Pedidos Listos
+        </Link>
       </div>
     </main>
   );
