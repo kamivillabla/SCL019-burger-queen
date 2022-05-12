@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/general/NavBar";
 import OrderReady from "../components/delivery/OrderReady";
 
+import "../App.css";
+
 const Delivery = () => {
   return (
     <>

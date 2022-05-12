@@ -13,6 +13,7 @@ const FormNameandTable = () => {
           <div className="col-md-8">
             <input
               type="text"
+              autocomplete="off"
               className="form-control"
               id="text"
               placeholder="Nombre cliente"

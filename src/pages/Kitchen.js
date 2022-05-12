@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/general/NavBar";
 import OrderKitchen from "../components/kitchen/OrderKitchen";
 
+import "../App.css";
+
 const Kitchen = () => {
   return (
     <>

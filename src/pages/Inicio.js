@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/page-inicio.css";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const inicio = () => {
   return (

@@ -50,7 +50,7 @@ const MenuOrder = () => {
         total: total,
         order: productFood,
         comment: comment,
-        state: "Cocinando",
+        state: "Pendiente",
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {

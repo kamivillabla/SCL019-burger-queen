@@ -21,7 +21,7 @@ const OrderReady = () => {
 
   useEffect(() => {
     onSnapshot(
-      query(collection(db, "order"), orderBy("order", "asc")),
+      query(collection(db, "order"), orderBy("order", "desc")),
       (snapshot) => {
         const products = snapshot.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
@@ -49,44 +49,63 @@ const OrderReady = () => {
 
   // Filtrado de pedidos listos
   let ordersReady = orderDelivery.filter((order) => {
-    return order.state === "Listo" || order.state === "Entregado";
+    return order.state === "Listo para delivery" || order.state === "Entregado";
   });
 
   return (
     <>
-      {ordersReady.map((order) => (
-        <article key={order.id} className="orderKitchen">
-          <form onSubmit={updateStatus}>
-            <div className="orderKitchen__cliente pt-5">
-              <h4>Cliente: {order.clientName}</h4>
-            </div>
-            <div className="orderKitchen__cliente">
-              <h4>Mesa:{order.clientTable}</h4>
-            </div>
-            <p>{order.time}</p>
-            <hr className="borderHr mt-3" />
-            {/* Los pedidos iterables */}
-            {order.order.map((item) => (
-              <OrderProducts
-                key={item.id}
-                name={item.name}
-                count={item.count}
-              />
-            ))}
-            <hr className="borderHr mt-3" />
-            {/*  <CommentKitchen /> */}
-            <Comment comment={order.comment} />
-            <p className="text-center">Estado: {order.state}...</p>
+      {ordersReady.length > 0 ? (
+        ordersReady.map((order) => (
+          <article key={order.id} className="mt-3">
+            <form onSubmit={updateStatus} className="orderKitchen">
+              <div className="orderKitchen__cliente pt-2">
+                <h4>Cliente: {order.clientName}</h4>
+              </div>
+              <div className="orderKitchen__cliente">
+                <h4>Mesa:{order.clientTable}</h4>
+              </div>
+              <p>{order.time}</p>
+              <hr className="borderHr mt-3" />
+              {/* Los pedidos iterables */}
+              {order.order.map((item) => (
+                <OrderProducts
+                  key={item.id}
+                  name={item.name}
+                  count={item.count}
+                />
+              ))}
+              <hr className="borderHr mt-3" />
+              {/*  <CommentKitchen /> */}
+              <Comment comment={order.comment} />
+              <p
+                className={
+                  order.state !== "Listo para delivery"
+                    ? "orderKitchen--colorGreen"
+                    : "orderKitchen--colorRed"
+                }
+              >
+                <span className="orderKitchen__titleState">Estado:</span>
+                {order.state === "Listo para delivery"
+                  ? " Listo para entregar"
+                  : " " + order.state}
+              </p>
+            </form>
             <button
               type="submit"
-              className="ordersKitchen__btn mt-3"
+              className="ordersKitchen__btn mt-1"
               onClick={(e) => updateStatus(e, "Entregado", order.id)}
             >
-              Listo para servir
+              Entregar
             </button>
-          </form>
+          </article>
+        ))
+      ) : (
+        <article>
+          <h2 className="text-white mt-5">
+            No hay pedidos para entregar a las mesas
+          </h2>
         </article>
-      ))}
+      )}
       ;
     </>
   );

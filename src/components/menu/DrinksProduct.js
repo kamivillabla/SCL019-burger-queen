@@ -11,40 +11,18 @@ function DrinksProduct() {
 
   const menuDrinks = menu.drinks;
 
-  const addProductFood = (id, name, price) => {
-    if (productFood.length === 0) {
-      setProductFood([{ id: id, name: name, price: price, count: 1 }]);
+  const addProductFood = (product) => {
+    const productsExist = productFood.find((item) => item.id === product.id);
+    if (productsExist) {
+      setProductFood(
+        productFood.map((item) =>
+          item.id === product.id
+            ? { ...productsExist, count: productsExist.count + 1 }
+            : item
+        )
+      );
     } else {
-      const newProductFood = [...productFood];
-      // Compruebo si ya existe el producto
-      const arrCard = newProductFood.some((element) => {
-        return element.id === id;
-      });
-      //Si ya existe lo aumento
-      if (arrCard) {
-        newProductFood.forEach((element, index) => {
-          if (element.id === id) {
-            // Solo el valor del producto con el mismo id
-            const count = newProductFood[index].count;
-            newProductFood[index] = {
-              id: id,
-              name: name,
-              price: price,
-              count: count + 1,
-            };
-          }
-        });
-      } else {
-        //Si no existe lo creo
-        newProductFood.push({
-          id: id,
-          name: name,
-          price: price,
-          count: 1,
-        });
-      }
-      //valor final del carrito
-      setProductFood(newProductFood);
+      setProductFood([...productFood, { ...product, count: 1 }]);
     }
   };
 
@@ -55,7 +33,7 @@ function DrinksProduct() {
           <button
             className="row mt-5 productFood__container p-4"
             key={drinks.id}
-            onClick={() => addProductFood(drinks.id, drinks.name, drinks.price)}
+            onClick={() => addProductFood(drinks)}
           >
             <div className="col-12">
               <div className="row">

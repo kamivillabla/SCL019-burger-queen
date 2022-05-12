@@ -65,3 +65,7 @@
 .menuOrder__total {
   font-weight: bold;
 }
+
+.orderPlaced__nameProducts {
+  width: 15rem;
+}

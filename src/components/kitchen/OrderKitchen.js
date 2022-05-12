@@ -45,43 +45,62 @@ const OrderKitchen = () => {
     }
   };
 
-  // Filtrado de pedidos Pendientes
+  // Filtrado de pedidos Pendientes y/o listo para delivery
   let ordersReadyKitchen = orderKitchen.filter((order) => {
-    return order.state === "Cocinando" || order.state === "Listo";
+    return order.state === "Pendiente" || order.state === "Listo para delivery";
   });
 
   return (
     <>
-      {ordersReadyKitchen.map((order) => (
-        <article key={order.id} className="orderKitchen ">
-          <form onSubmit={updateStatus}>
-            <div className="orderKitchen__cliente pt-5">
-              <h4>Cliente: {order.clientName}</h4>
-            </div>
-            <div className="orderKitchen__cliente">
-              <h4>Mesa:{order.clientTable}</h4>
-            </div>
-            <p>{order.time}</p>
-            <hr className="borderHr mt-3" />
-            {/* Los pedidos iterables */}
-            {order.order.map((item, index) => (
-              <OrderProducts key={index} name={item.name} count={item.count} />
-            ))}
-            <hr className="borderHr mt-3" />
-            <Comment comment={order.comment} />
-
-            <p className="text-center">Estado: {order.state}...</p>
+      {ordersReadyKitchen.length > 0 ? (
+        ordersReadyKitchen.map((order) => (
+          <article key={order.id} className="mt-3">
+            <form onSubmit={updateStatus} className="orderKitchen ">
+              <div className="orderKitchen__cliente pt-2">
+                <h4>Cliente: {order.clientName}</h4>
+              </div>
+              <div className="orderKitchen__cliente">
+                <h4>Mesa:{order.clientTable}</h4>
+              </div>
+              <p>{order.time}</p>
+              <hr className="borderHr mt-3" />
+              {/* Los pedidos iterables */}
+              {order.order.map((item, index) => (
+                <OrderProducts
+                  key={index}
+                  name={item.name}
+                  count={item.count}
+                />
+              ))}
+              <hr className="borderHr mt-3" />
+              <Comment comment={order.comment} />
+              <p
+                className={
+                  order.state !== "Pendiente"
+                    ? "orderKitchen--colorGreen"
+                    : "orderKitchen--colorRed"
+                }
+              >
+                <span className="orderKitchen__titleState">Estado:</span>
+                {order.state === "Listo para delivery"
+                  ? " Pedido Listo"
+                  : " " + order.state}
+              </p>
+            </form>
             <button
               type="submit"
-              className="ordersKitchen__btn mt-3"
-              onClick={(e) => updateStatus(e, "Listo", order.id)}
+              className="ordersKitchen__btn mt-1"
+              onClick={(e) => updateStatus(e, "Listo para delivery", order.id)}
             >
-              Pedido Listo
+              Listo
             </button>
-          </form>
+          </article>
+        ))
+      ) : (
+        <article>
+          <h2 className="text-white mt-5">No hay pedidos en cocina</h2>
         </article>
-      ))}
-      ;
+      )}
     </>
   );
 };

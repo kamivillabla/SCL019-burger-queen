@@ -6,7 +6,6 @@ import Menu from "./pages/Menu";
 import Kitchen from "./pages/Kitchen";
 import Delivery from "./pages/Delivery";
 import Error404 from "./pages/Error404";
-import "./App.css";
 
 /* ES6 */
 

@@ -38,7 +38,7 @@ const OrdersPlaced = () => {
           key={index}
           className="d-flex align-items-center orderPlaced__container justify-content-evenly "
         >
-          <p className="justify-self-start">
+          <p className="justify-self-start orderPlaced__nameProducts">
             <span className="circleIcons">
               <i className="fa-solid fa-circle"></i>
             </span>
