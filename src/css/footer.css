@@ -1,0 +1,12 @@
+.footer {
+  height: 15rem;
+  font-size: 2rem;
+  color: whitesmoke;
+}
+.footer__link {
+  color: white;
+  padding-left: 1rem;
+}
+.footer__link:hover {
+  color: var(--colorYellow);
+}

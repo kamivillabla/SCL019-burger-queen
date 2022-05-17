@@ -32,6 +32,11 @@ const MenuOrder = () => {
   );
   const total = totalProducts.toLocaleString("es-CL");
 
+  // Hora de ingreso pedido:
+  const checkInTime = () => {
+    let currentTime = new Date();
+    return `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
+  };
   /* Agregar a base de datos de firebase */
   const addOrder = async (e) => {
     e.preventDefault();
@@ -51,6 +56,8 @@ const MenuOrder = () => {
         order: productFood,
         comment: comment,
         state: "Pendiente",
+        checkInTime: checkInTime(),
+        endTime: null,
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {

@@ -9,6 +9,7 @@
   color: var(--colorYellow);
   cursor: pointer;
   transition: 0.2s all;
+  padding-right: 2rem;
 }
 .nav__icons:active {
   transform: scale(1.2);
@@ -16,4 +17,24 @@
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
+}
+
+.navbar__link {
+  color: white;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  padding: 0 2rem;
+}
+.navbar__link:hover {
+  color: var(--colorYellow);
+}
+
+@media (min-width: 768px) {
+  .navbar__link-center {
+    width: 90%;
+    padding-left: 16rem;
+  }
+  .navbar__link {
+    padding: 0 4rem;
+  }
 }

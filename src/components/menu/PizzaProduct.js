@@ -25,7 +25,6 @@ function PizzaProduct() {
       setProductFood([...productFood, { ...product, count: 1 }]);
     }
   };
-
   return (
     <>
       {menuPizzas.map((pizza) => {

@@ -2,6 +2,7 @@ import React from "react";
 import MenuProducts from "../components/menu/MenuProducts";
 import MenuOrder from "../components/menu/MenuOrder";
 import NavBar from "../components/general/NavBar";
+import Footer from "../components/general/Footer";
 
 /* Estilos css */
 import "../css/page-menu.css";
@@ -25,6 +26,7 @@ const Menu = () => {
           </article>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

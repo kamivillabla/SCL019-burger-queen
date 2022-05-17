@@ -34,3 +34,16 @@
 .orderKitchen__titleState {
   color: black;
 }
+
+.orderKitchen__time {
+  font-size: 1.4rem;
+  line-height: 1rem;
+}
+
+article h2 {
+  font-size: 3rem;
+}
+
+.markColor {
+  background-color: var(--colorYellow);
+}

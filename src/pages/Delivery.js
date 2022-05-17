@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "../components/general/NavBar";
 import OrderReady from "../components/delivery/OrderReady";
+import Footer from "../components/general/Footer";
 
 import "../App.css";
 
 const Delivery = () => {
   return (
-    <>
-      <main className="container--color min-vh-100 pb-5">
+    <div className="container--color">
+      <main className=" min-vh-100 pb-5">
         <Navbar />
         <h1 className="text-center text-white my-5">
           Pedidos listos para servir y/o entregar
@@ -17,7 +18,8 @@ const Delivery = () => {
           <OrderReady />
         </section>
       </main>
-    </>
+      <Footer />
+    </div>
   );
 };
 
