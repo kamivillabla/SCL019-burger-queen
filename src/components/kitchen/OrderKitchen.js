@@ -12,7 +12,7 @@ import {
   query,
   updateDoc,
   doc,
-} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+} from "firebase/firestore";
 
 const OrderKitchen = () => {
   const { orderKitchen, setOrderKitchen } = useContext(Context);
@@ -30,7 +30,7 @@ const OrderKitchen = () => {
         console.log(err);
       }
     );
-  });
+  }, [setOrderKitchen]);
 
   //Hora de terminado producto de cocinar:
   const endTime = () => {
@@ -49,6 +49,22 @@ const OrderKitchen = () => {
         endTime: time,
       });
       console.log("El pedido fue enviado a delivery con exito");
+    } catch (error) {
+      console.log("Error al actualizar el pedido");
+      console.log(error);
+    }
+  };
+
+  const updateStatusButtonKitchen = async (e, state, id) => {
+    e.preventDefault();
+
+    try {
+      await updateDoc(doc(db, "order", id), {
+        stateKitchen: state,
+      });
+      console.log(
+        "El pedido se actualizado de preparando a cocinando con exito"
+      );
     } catch (error) {
       console.log("Error al actualizar el pedido");
       console.log(error);
@@ -82,10 +98,10 @@ const OrderKitchen = () => {
           <article key={order.id} className="mt-3">
             <form onSubmit={updateStatus} className="orderKitchen ">
               <p className="orderKitchen__time pt-2">
-                Hora ingreso: {order.checkInTime}
+                Hora ingreso pedido: {order.checkInTime}
               </p>
               <p className="orderKitchen__time">
-                Hora termino: {order.endTime}
+                Hora termino pedido: {order.endTime}
               </p>
               <div className="orderKitchen__cliente pt-2">
                 <h4>Cliente: {order.clientName}</h4>
@@ -105,6 +121,35 @@ const OrderKitchen = () => {
               ))}
               <hr className="borderHr mt-3" />
               <Comment comment={order.comment} />
+              <div className="d-flex justify-content-center py-3">
+                {order.stateKitchen === "Preparar" ? (
+                  <button
+                    className={
+                      order.stateKitchen === "Preparar"
+                        ? "orderKitchen__stateKitchen"
+                        : "orderKitchen__stateKitchen orderKitchen__stateKitchen--colorYellow"
+                    }
+                    onClick={(e) =>
+                      updateStatusButtonKitchen(e, "Cocinando", order.id)
+                    }
+                  >
+                    {order.stateKitchen}
+                  </button>
+                ) : (
+                  <button
+                    className={
+                      order.state === "Listo para delivery"
+                        ? "orderKitchen__stateKitchen orderKitchen__stateKitchen--colorGreen"
+                        : "orderKitchen__stateKitchen orderKitchen__stateKitchen--colorYellow"
+                    }
+                    onClick={(e) => updateStatusButtonKitchen(e)}
+                  >
+                    {order.state === "Listo para delivery"
+                      ? " Terminado"
+                      : order.stateKitchen}
+                  </button>
+                )}
+              </div>
               <p
                 className={
                   order.state !== "Pendiente"

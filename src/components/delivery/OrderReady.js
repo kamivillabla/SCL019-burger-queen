@@ -14,7 +14,7 @@ import {
   query,
   updateDoc,
   doc,
-} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+} from "firebase/firestore";
 
 const OrderReady = () => {
   const { orderDelivery, setOrderDelivery } = useContext(Context);
@@ -81,7 +81,7 @@ const OrderReady = () => {
                 Hora entregado a garzón/a: {order.endTime}
               </p>
               <p className="orderKitchen__time">
-                Hora entregado cliente: {order.customerDeliveryTime}
+                Hora entregado cliente/a: {order.customerDeliveryTime}
               </p>
               <div className="orderKitchen__cliente pt-2">
                 <h4>Cliente: {order.clientName}</h4>
@@ -102,6 +102,9 @@ const OrderReady = () => {
               <hr className="borderHr mt-3" />
               {/*  <CommentKitchen /> */}
               <Comment comment={order.comment} />
+              <div className="d-flex justify-content-center">
+                <p className="menuOrder__total pt-5">Total: $ {order.total}</p>
+              </div>
               <p
                 className={
                   order.state !== "Listo para delivery"

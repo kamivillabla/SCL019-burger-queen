@@ -3,10 +3,7 @@ import { useContext } from "react";
 import { Context } from "../../context/UseContext";
 import { error, errorProducts, correct } from "../../function/errorManagement";
 import { db } from "../../firebase/configfirebase";
-import {
-  collection,
-  addDoc,
-} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+import { collection, addDoc } from "firebase/firestore";
 import CommentsOrder from "./CommentsOrder";
 import OrdersPlaced from "./OrdersPlaced";
 import BtnSendToKitchen from "./BtnSendToKitchen";
@@ -23,6 +20,7 @@ const MenuOrder = () => {
     setProductFood,
     comment,
     setComment,
+    stateProductKitchen,
   } = useContext(Context);
 
   // Suma total productos
@@ -57,6 +55,7 @@ const MenuOrder = () => {
         comment: comment,
         state: "Pendiente",
         checkInTime: checkInTime(),
+        stateKitchen: stateProductKitchen,
         endTime: null,
       });
       console.log("Document written with ID: ", docRef.id);

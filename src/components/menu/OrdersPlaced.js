@@ -17,9 +17,13 @@ const OrdersPlaced = () => {
 
   // Restar producto
   const subtractProducts = (id) => {
-    const arrCard = productFood.map((item) =>
-      item.id === id ? { ...item, count: item.count - 1 } : item
-    );
+    const arrCard = productFood.map((item) => {
+      if (item.count > 1) {
+        return item.id === id ? { ...item, count: item.count - 1 } : item;
+      } else {
+        return item.id === id ? { ...item, count: 1 } : item;
+      }
+    });
     setProductFood(arrCard);
   };
 

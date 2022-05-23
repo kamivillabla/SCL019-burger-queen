@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/general/NavBar";
+import NavbarChef from "../components/general/NavbarChef";
 import OrderKitchen from "../components/kitchen/OrderKitchen";
 import Footer from "../components/general/Footer";
 import "../css/page-kitchen.css";
@@ -10,7 +10,7 @@ const Kitchen = () => {
   return (
     <div className="container--color ">
       <main className="min-vh-100 pb-5">
-        <Navbar />
+        <NavbarChef />
         <h1 className="text-center text-white my-5">Cocina</h1>
 
         <div className="">

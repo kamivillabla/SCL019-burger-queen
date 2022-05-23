@@ -47,3 +47,26 @@ article h2 {
 .markColor {
   background-color: var(--colorYellow);
 }
+
+.orderKitchen__stateKitchen {
+  width: 9rem;
+  height: 4rem;
+  font-size: 1.8rem;
+  background-color: rgba(128, 128, 128, 0.694);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.2s all;
+}
+.orderKitchen__stateKitchen--colorYellow {
+  background-color: #ffe76fd4;
+}
+.orderKitchen__stateKitchen--colorGreen {
+  background-color: rgba(0, 128, 0, 0.644);
+}
+
+.orderKitchen__stateKitchen:active {
+  transform: scale(0.98);
+}
