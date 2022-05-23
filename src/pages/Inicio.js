@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../context/UseContext";
 import "../css/page-inicio.css";
 import { Link } from "react-router-dom";
 import Footer from "../components/general/Footer";
+
 import "../App.css";
 
-const inicio = () => {
+const Inicio = () => {
+  const { setUser } = useContext(Context);
+
+  const userChange = (name) => {
+    setUser(name);
+  };
+
   return (
     <div className=" container--color d-flex flex-column ">
       <main className="container-fluid vh-100 d-flex flex-column  justify-content-evenly">
@@ -16,15 +24,23 @@ const inicio = () => {
           />
         </div>
         <div className="d-flex justify-content-center ">
-          <Link className="button-inicio" to="/Menu">
-            Menú
+          <Link
+            onClick={() => userChange("meserx")}
+            className="button-inicio"
+            to="/Menu"
+          >
+            Meserx
           </Link>
-          <Link className="button-inicio" to="/Cocina">
-            Cocina
+          <Link
+            onClick={() => userChange("chef")}
+            className="button-inicio"
+            to="/Cocina"
+          >
+            Chef
           </Link>
-          <Link className="button-inicio" to="/Entregar">
+          {/*           <Link className="button-inicio" to="/Entregar">
             Pedidos Listos
-          </Link>
+          </Link> */}
         </div>
       </main>
       <Footer />
@@ -32,4 +48,4 @@ const inicio = () => {
   );
 };
 
-export default inicio;
+export default Inicio;

@@ -14,6 +14,7 @@ export const DatosContext = ({ children }) => {
   const [comment, setComment] = useState("");
   const [orderKitchen, setOrderKitchen] = useState([]);
   const [orderDelivery, setOrderDelivery] = useState([]);
+  const [user, setUser] = useState();
 
   return (
     <>
@@ -31,6 +32,8 @@ export const DatosContext = ({ children }) => {
           setOrderKitchen,
           orderDelivery,
           setOrderDelivery,
+          user,
+          setUser,
         }}
       >
         {children}
